@@ -7,7 +7,9 @@ name: Auto Deploy Project When Push Main Branch
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+     env:
+       working-directory: ./client-docs
+
     steps:
     
     - name: Checkout
@@ -16,5 +18,5 @@ jobs:
     - name: Deploy
       uses: enriikke/gatsby-gh-pages-action@v2
       with:
-        access-token: ${{ secrets.ACCESS_TOKEN }}
+        access-token: ${{ secrets.API_KEY_GITHUB }}
         deploy-branch: gh-pages
