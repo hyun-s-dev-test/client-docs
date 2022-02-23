@@ -8,8 +8,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    
+    - name: cd dir
+      run: cd client-docs
     - name: Checkout
       uses: actions/checkout@v1
+      
 ​
     - name: Deploy
       uses: enriikke/gatsby-gh-pages-action@v2
