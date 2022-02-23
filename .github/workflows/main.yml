@@ -9,6 +9,9 @@ jobs:
   build_gatsby:
     name: build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./gatsby-starter-blog
     steps:
       - uses: actions/checkout@v1
 
@@ -18,10 +21,10 @@ jobs:
       - name: gatsby build
         env:
           GH_API_KEY: ${{ secrets.API_KEY_GITHUB }}
-        run: npm build
+        run: npm run build
 
       - name: deploy
         uses: maxheld83/ghpages@v0.2.1
         env:
           GH_PAT: ${{ secrets.API_KEY_GITHUB }}
-          BUILD_DIR: 'public/'
+          BUILD_DIR: "gatsby-starter-blog/public/"
