@@ -20,4 +20,4 @@ jobs:
         with:
           access-token: ${{ secrets.API_KEY_GITHUB }}
           deploy-branch: gh-pages
-          SOURCE_DIR: "client-docs"
+          working-dir: "client-docs"
