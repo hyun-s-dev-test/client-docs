@@ -7,8 +7,7 @@ name: Auto Deploy Project When Push Main Branch
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./client-docs
+    
     steps:
     
     - name: Checkout
